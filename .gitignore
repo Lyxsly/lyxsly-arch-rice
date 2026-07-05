@@ -1,0 +1,34 @@
+# caches
+.cache/
+**/.cache/
+*.log
+
+# backups
+*.bak
+*.backup
+*.swp
+*~
+
+# build / package dirs
+node_modules/
+target/
+dist/
+build/
+
+# secrets
+secrets/
+.env
+*.env
+*.key
+*.pem
+
+# never commit these
+.ssh/
+.gnupg/
+.config/gh/hosts.yml
+.config/github-copilot/
+.config/discord/
+.config/google-chrome/
+.config/BraveSoftware/
+.config/zen/
+.config/mozilla/
