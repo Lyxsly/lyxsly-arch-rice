@@ -23,15 +23,15 @@ $time
 add_newline = true
 
 [palettes.colors]
-color1 = '#ffb4a9'
-color2 = '#561e17'
-color3 = '#d8c2be'
-color4 = '#271d1c'
-color5 = '#561e17'
-color6 = '#1a1110'
-color7 = '#1a1110'
-color8 = '#ffb4a9'
-color9 = '#dec38c'
+color1 = '#86d1ea'
+color2 = '#003642'
+color3 = '#bfc8cc'
+color4 = '#1b2023'
+color5 = '#003642'
+color6 = '#0f1416'
+color7 = '#0f1416'
+color8 = '#86d1ea'
+color9 = '#c1c4eb'
 error = '#ffb4ab'
 
 [username]

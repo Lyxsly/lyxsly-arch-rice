@@ -12,7 +12,7 @@ return {
   {
     "masisz/wisteria.nvim",
     name = "wisteria",
-    commit = "937f9ff0435e30b9e5798b4b9e2b5ed3d83ee8e5",
+    -- commit = "937f9ff0435e30b9e5798b4b9e2b5ed3d83ee8e5",
     opts = {
       transparent = true,
     },

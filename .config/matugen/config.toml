@@ -37,6 +37,10 @@ output_path = '~/.config/starship/starship.toml'
 #input_path = '~/.config/matugen/templates/vim-colors.vim'
 #output_path = '~/.config/nvim/colors/vim-colors.vim'
 
+[templates.nvim]
+input_path = '~/.config/matugen/templates/wisteria_base_color.lua'
+output_path = '~/.local/share/nvim/lazy/wisteria/lua/wisteria/lib/base_color.lua'
+
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
