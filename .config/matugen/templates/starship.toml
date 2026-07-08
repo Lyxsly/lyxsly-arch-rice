@@ -84,9 +84,9 @@ time_format = "%R" # Hour:Minute Format
 format = '[[   $time ](fg:color3)]($style)'
 
 [character]
-success_symbol = "[>](color9 bold)"
+success_symbol = "[❯](color9 bold)"
 error_symbol = "[🞈](error bold)"
-vimcmd_symbol = "[🞈](color1 bold) "
+vimcmd_symbol = "[V](color1 bold) "
 
 [aws]
 symbol = " "
