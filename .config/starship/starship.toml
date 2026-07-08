@@ -1,12 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+palette = 'colors'
+
 format = """
 $os\
 $directory\
-[ ](fg:#88C0D0 bg:#1d2230)\
+[ ](fg:color1 bg:color4)\
 $git_branch\
 $git_commit\
 $git_status\
-[ ](fg:#1d2230)\
+[ ](fg:color4)\
 $c$cpp$cmake$python$rust$nodejs$ruby\
 \n$character
 """
@@ -20,9 +22,21 @@ $time
 
 add_newline = true
 
+[palettes.colors]
+color1 = '#ffb4a9'
+color2 = '#561e17'
+color3 = '#d8c2be'
+color4 = '#271d1c'
+color5 = '#561e17'
+color6 = '#1a1110'
+color7 = '#1a1110'
+color8 = '#ffb4a9'
+color9 = '#dec38c'
+error = '#ffb4ab'
+
 [username]
-style_user = "white bold"
-style_root = "black bold"
+style_user = "color3 bold"
+style_root = "error bold"
 format = "user: [$user]($style) "
 disabled = false
 
@@ -30,16 +44,15 @@ disabled = false
 symbol = ' '
 
 [directory]
-style = "fg:#2E3440 bg:#88C0D0 bold"
+style = "fg:color2 bg:color1 bold"
 # format = "[ $path ]($style)"
 truncation_length = 10
 truncate_to_repo = false
 truncation_symbol = "…/"
 # truncation_symbol = ' ' # nf-fa-folder_open
 # truncate_to_repo = false
-# style = 'fg:#7aa2f7 bg:#1a1b26'
 read_only = ' 󰌾 ' # nf-md-lock
-read_only_style = 'fg:#f7768e bg:#1a1b26'
+read_only_style = 'fg:error bg:color7'
 format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [directory.substitutions]
@@ -50,29 +63,30 @@ format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 symbol = " "
-style = "bg:#1d2230"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#1d2230)]($style)'
+style = "bg:color4"
+format = '[[ $symbol $branch ](fg:color3 bg:color4)]($style)'
 
 [git_commit]
 tag_symbol = '  '
 
 [git_status]
-style = "bg:#1d2230"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#1d2230)]($style)'
+style = "bg:color4"
+format = '[[($all_status$ahead_behind )](fg:color3 bg:color4)]($style)'
 
 [cmd_duration]
 min_time = 1
-style = 'fg:#e0af68'
+style = 'fg:color9'
 format = "[$duration]($style)" # nf-pl-right_soft_divider, nf-mdi-clock
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-# style = "bg:#1d2230"
-format = '[[   $time ](fg:#a0a9cb)]($style)'
+format = '[[   $time ](fg:color3)]($style)'
 
 [character]
-vimcmd_symbol = '[V](bold green) '
+success_symbol = "[>](color9 bold)"
+error_symbol = "[🞈](error bold)"
+vimcmd_symbol = "[🞈](color1 bold) "
 
 [aws]
 symbol = " "
@@ -241,7 +255,7 @@ disabled = true
 [os]
 disabled = false
 # OSアイコンの見た目を調整（背景色なし、文字色を少し明るいグレーに）
-style = "fg:#a0a9cb bold"
+style = "fg:color3 bold"
 format = "[$symbol]($style)"
 
 [os.symbols]
@@ -387,5 +401,3 @@ symbol = " "
 
 [zig]
 symbol = " "
-
-

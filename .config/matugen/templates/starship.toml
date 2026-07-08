@@ -1,12 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+palette = 'colors'
+
 format = """
 $os\
 $directory\
-[ ](fg:{{base16.base06.default.hex}} bg:{{colors.surface_container.default.hex}})\
+[ ](fg:color1 bg:color4)\
 $git_branch\
 $git_commit\
 $git_status\
-[ ](fg:{{colors.surface_container.default.hex}})\
+[ ](fg:color4)\
 $c$cpp$cmake$python$rust$nodejs$ruby\
 \n$character
 """
@@ -20,9 +22,21 @@ $time
 
 add_newline = true
 
+[palettes.colors]
+color1 = '{{colors.primary_fixed_dim.default.hex}}'
+color2 = '{{colors.on_primary.default.hex}}'
+color3 = '{{colors.on_surface_variant.default.hex}}'
+color4 = '{{colors.surface_container.default.hex}}'
+color5 = '{{colors.on_primary.default.hex}}'
+color6 = '{{colors.surface_dim.default.hex}}'
+color7 = '{{colors.surface.default.hex}}'
+color8 = '{{colors.primary.default.hex}}'
+color9 = '{{colors.tertiary.default.hex}}'
+error = '{{colors.error.default.hex}}'
+
 [username]
-style_user = "white bold"
-style_root = "black bold"
+style_user = "color3 bold"
+style_root = "error bold"
 format = "user: [$user]($style) "
 disabled = false
 
@@ -30,7 +44,7 @@ disabled = false
 symbol = ' '
 
 [directory]
-style = "fg:{{base16.base00.default.hex}} bg:{{base16.base06.default.hex}} bold"
+style = "fg:color2 bg:color1 bold"
 # format = "[ $path ]($style)"
 truncation_length = 10
 truncate_to_repo = false
@@ -38,7 +52,7 @@ truncation_symbol = "…/"
 # truncation_symbol = ' ' # nf-fa-folder_open
 # truncate_to_repo = false
 read_only = ' 󰌾 ' # nf-md-lock
-read_only_style = 'fg:{{base16.base08.default.hex}} bg:{{base16.base00.default.hex}}'
+read_only_style = 'fg:error bg:color7'
 format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [directory.substitutions]
@@ -49,28 +63,30 @@ format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 symbol = " "
-style = "bg:{{colors.surface_container.default.hex}}"
-format = '[[ $symbol $branch ](fg:{{base16.base07.default.hex}} bg:{{colors.surface_container.default.hex}})]($style)'
+style = "bg:color4"
+format = '[[ $symbol $branch ](fg:color3 bg:color4)]($style)'
 
 [git_commit]
 tag_symbol = '  '
 
 [git_status]
-style = "bg:{{colors.surface_container.default.hex}}"
-format = '[[($all_status$ahead_behind )](fg:{{base16.base07.default.hex}} bg:{{colors.surface_container.default.hex}})]($style)'
+style = "bg:color4"
+format = '[[($all_status$ahead_behind )](fg:color3 bg:color4)]($style)'
 
 [cmd_duration]
 min_time = 1
-style = 'fg:{{base16.base07.default.hex}}'
+style = 'fg:color9'
 format = "[$duration]($style)" # nf-pl-right_soft_divider, nf-mdi-clock
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[[   $time ](fg:{{base16.base07.default.hex}})]($style)'
+format = '[[   $time ](fg:color3)]($style)'
 
 [character]
-vimcmd_symbol = '[V](bold green) '
+success_symbol = "[>](color9 bold)"
+error_symbol = "[🞈](error bold)"
+vimcmd_symbol = "[🞈](color1 bold) "
 
 [aws]
 symbol = " "
@@ -239,7 +255,7 @@ disabled = true
 [os]
 disabled = false
 # OSアイコンの見た目を調整（背景色なし、文字色を少し明るいグレーに）
-style = "fg:{{base16.base04.default.hex}} bold"
+style = "fg:color3 bold"
 format = "[$symbol]($style)"
 
 [os.symbols]
