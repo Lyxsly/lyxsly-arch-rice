@@ -20,6 +20,12 @@ output_path = '~/.config/eww/colors.scss'
 # 3. Applications (Terminals, Editors, Browsers)
 # =============================================================================
 
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/kitty-colors.conf'
+post_hook = '''
+  pkill -SIGUSR1 -x kitty || :
+'''
 
 [templates.yazi]
 input_path  = '~/.config/matugen/templates/yazi-theme.toml'
@@ -33,14 +39,9 @@ output_path = '~/.config/starship/starship.toml'
 #input_path = '~/.config/matugen/templates/lush-colors.json'
 #output_path = '~/.config/nvim/colors/lush-colors.json'
 
-#[templates.vim]
-#input_path = '~/.config/matugen/templates/vim-colors.vim'
-#output_path = '~/.config/nvim/colors/vim-colors.vim'
-
-
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/kitty-colors.conf'
-post_hook = '''
-  pkill -SIGUSR1 -x kitty || :
+[templates.neovim]
+input_path  = '~/.config/matugen/templates/nvim-colors.lua'
+output_path = '~/.config/nvim/generated.lua'
+post_hook   = '''
+  pkill -SIGUSR1 -x nvim || :
 '''
