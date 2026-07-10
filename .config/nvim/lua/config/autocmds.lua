@@ -8,24 +8,33 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 -- ~/.config/nvim/lua/config/autocmds.lua
 
-local function transparent()
-  local groups = {
-    "Normal",
-    "NormalNC",
-    "NormalFloat",
-    "FloatBorder",
-    "SignColumn",
-    "LineNr",
-    "CursorLineNr",
-    "EndOfBuffer",
-    "MsgArea",
-  }
+local function source_matugen()
+  local matugen_path = vim.fn.expand("~/.config/nvim/generated.lua")
 
-  for _, group in ipairs(groups) do
-    vim.api.nvim_set_hl(0, group, { bg = "none" })
+  if vim.fn.filereadable(matugen_path) == 1 then
+    dofile(matugen_path)
+  else
+    vim.cmd("colorscheme base16-catppuccin-mocha")
+    vim.notify(
+      "matugen generated.lua was not found. The colorscheme will update after matugen runs.",
+      vim.log.levels.WARN
+    )
   end
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
-  callback = transparent,
-})
+local function auxiliary_function()
+  source_matugen()
+
+  vim.api.nvim_set_hl(0, "Comment", { italic = true })
+end
+
+-- vim.api.nvim_create_autocmd("Signal", {
+--   pattern = "SIGUSR1",
+--   callback = auxiliary_function,
+-- })
+
+-- vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
+--   callback = auxiliary_function,
+-- })
+
+-- auxiliary_function()
