@@ -33,8 +33,14 @@ end
 --   callback = auxiliary_function,
 -- })
 
--- vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
---   callback = auxiliary_function,
+-- local function apply_transparent()
+--   vim.schedule(function()
+--     require("theme.transparent").apply()
+--   end)
+-- end
+--
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   callback = apply_transparent,
 -- })
 
 -- auxiliary_function()

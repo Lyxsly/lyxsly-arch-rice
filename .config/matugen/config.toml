@@ -40,8 +40,8 @@ output_path = '~/.config/starship/starship.toml'
 #output_path = '~/.config/nvim/colors/lush-colors.json'
 
 [templates.neovim]
-input_path  = '~/.config/matugen/templates/nvim-colors.lua'
-output_path = '~/.config/nvim/generated.lua'
+input_path  = '~/.config/matugen/templates/matugen-wisteria.lua'
+output_path = '~/.local/share/nvim/local/matugen-wisteria.nvim/lua/matugen_wisteria/lib/palette.lua'
 post_hook   = '''
   pkill -SIGUSR1 -x nvim || :
 '''
