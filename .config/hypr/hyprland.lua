@@ -2,6 +2,14 @@
 -- Refer to the wiki for more information.
 -- https://wiki.hypr.land/Configuring/Start/
 
+local ok, colors = pcall(require, "matugen-colors")
+if not ok then
+	colors = {
+		active_border = "rgba(33ccffee)",
+		inactive_border = "rgba(595959aa)",
+	}
+end
+
 -- Please note not all available settings / options are set here.
 -- For a full list, see the wiki
 
@@ -110,8 +118,8 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
+			active_border = colors.active_border,
+			inactive_border = colors.inactive_border,
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps

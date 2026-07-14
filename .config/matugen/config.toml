@@ -45,3 +45,8 @@ output_path = '~/.local/share/nvim/local/matugen-wisteria.nvim/lua/matugen_wiste
 post_hook   = '''
   pkill -SIGUSR1 -x nvim || :
 '''
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/matugen-colors.lua'
+post_hook = 'hyprctl reload config-only || :'
