@@ -28,6 +28,14 @@ local function auxiliary_function()
   vim.api.nvim_set_hl(0, "Comment", { italic = true })
 end
 
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "markdown",
+--   callback = function()
+--     vim.cmd("iabbrev <buffer> scheduled ⏳")
+--     vim.cmd("iabbrev <buffer> due 📅")
+--     vim.cmd("iabbrev <buffer> start 🛫")
+--   end,
+-- })
 -- vim.api.nvim_create_autocmd("Signal", {
 --   pattern = "SIGUSR1",
 --   callback = auxiliary_function,

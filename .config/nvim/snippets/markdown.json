@@ -1,0 +1,23 @@
+{
+  "Scheduled Task": {
+    "prefix": "scheduled",
+    "body": [
+      "⏳ ${1:YYYY-MM-DD}"
+    ],
+    "description": "Add scheduled date to task"
+  },
+  "Due Task": {
+    "prefix": "due",
+    "body": [
+      "📅 ${1:YYYY-MM-DD}"
+    ],
+    "description": "Add due date to task"
+  },
+  "Start Task": {
+    "prefix": "start",
+    "body": [
+      "🛫 ${1:YYYY-MM-DD}"
+    ],
+    "description": "Add due date to task"
+  }
+}

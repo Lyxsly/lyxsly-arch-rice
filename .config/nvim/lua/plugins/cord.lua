@@ -62,9 +62,10 @@ return {
                 .spawn({
                   cmd = "playerctl",
                   args = {
+                    "--all-players",
                     "metadata",
                     "--format",
-                    "{{status}}\t{{artist}}\t{{title}}",
+                    "{{status}}\t{{artist}}\t{{title}}\t{{xesam:url}}",
                   },
                 })
                 :await()
@@ -75,17 +76,19 @@ return {
 
               local output = vim.trim(result.stdout or "")
 
-              local status, artist, title = output:match("^(.-)\t(.-)\t(.*)$")
+              for line in output:gmatch("[^\r\n]+") do
+                local status, artist, title, url = line:match("^(.-)\t(.-)\t(.-)\t(.*)$")
 
-              if status ~= "Playing" or not title or title == "" then
-                return false
+                if status == "Playing" and url and url:match("^https?://music%.youtube%.com/") and title and title ~= "" then
+                  if not artist or artist == "" then
+                    return "🎵 " .. title
+                  end
+
+                  return "🎵 " .. artist .. " — " .. title
+                end
               end
 
-              if not artist or artist == "" then
-                return "🎵 " .. title
-              end
-
-              return "🎵 " .. artist .. " — " .. title
+              return false
             end)
 
             return track or nil

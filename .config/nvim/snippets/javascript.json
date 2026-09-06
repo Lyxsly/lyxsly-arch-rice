@@ -1,0 +1,11 @@
+{
+  "Return JSX": {
+    "prefix": "ret",
+    "body": [
+      "return (",
+      "  $0",
+      ");"
+    ],
+    "description": "Return JSX block"
+  }
+}
