@@ -8,6 +8,13 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 -- ~/.config/nvim/lua/config/autocmds.lua
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+
 local function source_matugen()
   local matugen_path = vim.fn.expand("~/.config/nvim/generated.lua")
 
