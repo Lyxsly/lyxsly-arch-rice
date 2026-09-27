@@ -1,0 +1,13 @@
+# source	package
+repo	neovim
+repo	lazygit
+repo	fnm
+repo	npm
+repo	bun
+repo	uv
+repo	pyenv
+repo	rbenv
+repo	ruby-build
+repo	mise
+repo	tree-sitter-cli
+foreign	herdr-bin

@@ -1,0 +1,22 @@
+# source	package
+foreign	zen-browser-bin
+repo	obsidian
+repo	discord
+repo	dolphin
+repo	mpv
+repo	yt-dlp
+repo	visidata
+foreign	smoothcsv-bin
+repo	cups
+repo	cups-pk-helper
+repo	system-config-printer
+foreign	arduino-ide-bin
+foreign	picotool
+foreign	tio-git
+repo	chafa
+repo	cava
+repo	fastfetch
+repo	imagemagick
+repo	smartmontools
+repo	powertop
+repo	libva-utils

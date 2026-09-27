@@ -1,0 +1,24 @@
+[opener]
+nvim = [
+  { run = 'nvim %s', block = true, desc = "Neovim" },
+]
+
+zen = [
+  { run = 'zen-browser %s1', orphan = true, desc = "Zen Browser" },
+]
+
+[open]
+prepend_rules = [
+  # 文書・テキスト系
+  { mime = "text/*", use = "nvim" },
+
+  { url = "*.md",   use = "nvim" },
+  { url = "*.txt",  use = "nvim" },
+  { url = "*.json", use = "nvim" },
+  { url = "*.toml", use = "nvim" },
+  { url = "*.yaml", use = "nvim" },
+  { url = "*.yml",  use = "nvim" },
+
+  # PDF
+  { mime = "application/pdf", use = "zen" },
+]

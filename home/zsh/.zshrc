@@ -25,8 +25,6 @@ alias update='sudo pacman -Syu'
 # 入力途中に過去の履歴を灰色でサジェスト (右矢印で決定)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# コマンドの正誤を色分け (※競合を防ぐため、必ず最後に読み込む)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 #Starshipの設定ファイルパス
@@ -34,4 +32,10 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # --- Starshipの起動 ---
 eval "$(starship init zsh)"
+
 eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(rbenv init - zsh)"
+eval "$(pyenv init - zsh)"
+
+# コマンドの正誤を色分け (※競合を防ぐため、必ず最後に読み込む)
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

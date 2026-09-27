@@ -1,0 +1,11 @@
+# source	package
+foreign	blueberry
+repo	dunst
+foreign	eww-git
+repo	hyprpaper
+foreign	music-presence-bin
+repo	vivaldi
+repo	vulkan-nouveau
+repo	wofi
+repo	xf86-video-ati
+repo	xf86-video-nouveau
