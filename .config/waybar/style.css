@@ -42,15 +42,17 @@ window#waybar,
 window#waybar * {
   min-height: 0;
   min-width: 0;
-  font-family: Lexend, "JetBrainsMono NFP", monospace; 
+  background-color: transparent;
+  font-family: "Iosevka", Lexend, monospace;
   font-size: 16px;
   font-weight: 600;
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: @tooltip-bg;
   transition-property: background-color;
   transition-duration: 0.5s;
+  border-radius: 10px;
 }
 
 /* ===========================
@@ -70,10 +72,9 @@ window#waybar {
 #custom-launcher,
 #cpu,
 #network,
-#memory,
-#window {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
+#memory {
+  padding: 0 0.6rem;
+  margin: 0 0.25rem;
   border-radius: 6px;
   background-color: @base-bg;
 }
@@ -83,25 +84,22 @@ window#waybar {
  * =========================== */
 
 #workspaces button {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  background-color: @ws-bg;
+  all: initial;
+  padding: 0 0.6rem 0 0.25rem;
+  margin: 0;
+
   color: @ws-fg;
 }
 
 #workspaces button:hover {
-  color: @base-bg-solid;
-  background-color: @base-fg;
+  color: @ws-fg-active;
 }
 
 #workspaces button.active {
-  background-color: @ws-bg-active;
   color: @ws-fg-active;
 }
 
 #workspaces button.urgent {
-  background-color: @ws-bg-urgent;
   color: @ws-fg-urgent;
 }
 
@@ -110,8 +108,8 @@ window#waybar {
  * =========================== */
 
 #mpris {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
+  padding: 0 0.6rem;
+  margin: 0 0.25rem;
   border-radius: 6px;
   background-color: @base-bg;
 }
@@ -205,4 +203,3 @@ tooltip {
   background-color: @tooltip-bg;
   border: 2px solid @tooltip-border;
 }
-
