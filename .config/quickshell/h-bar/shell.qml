@@ -2,37 +2,48 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
-PanelWindow {
-    anchors {
-        top: true
-        left: true
-        right: true
-    }
+Scope {
+    id: root
 
-    implicitHeight: 30
+    property string time
 
-    Text {
-        id: clock
+    Variants {
+        model: Quickshell.screens
 
-        anchors.centerIn: parent
+        delegate: Component {
+            PanelWindow {
+                required property var modelData
+                screen: modelData
 
-        Process {
-            id: dateProc
+                anchors {
+                    top: true
+                    left: true
+                    right: true
+                }
 
-            command: ["date"]
-            running: true
-
-            stdout: StdioCollector {
-                onStreamFinished: clock.text = this.text
+                implicitHeight: 30
+                Text {
+                    anchors.centerIn: parent
+                    text: root.time
+                }
             }
         }
+    }
 
-        Timer {
-            interval: 1000
-            running: true
-            repeat: true
+    Process {
+        id: dateProc
+        command: ["date"]
+        running: true
 
-            onTriggered: dateProc.running = true
+        stdout: StdioCollector {
+            onStreamFinished: root.time = this.text
         }
+    }
+
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: dateProc.running = true
     }
 }

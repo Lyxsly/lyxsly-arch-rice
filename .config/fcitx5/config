@@ -15,13 +15,12 @@
 [Hotkey/TriggerKeys]
 0=Zenkaku_Hankaku
 1=Hangul
-2=F24
 
-# [Hotkey/ActivateKeys]
-# 0=Hangul_Hanja
+[Hotkey/ActivateKeys]
+0=Shift+F23
 
-# [Hotkey/DeactivateKeys]
-# 0=Hangul_Romaja
+[Hotkey/DeactivateKeys]
+0=F23
 
 # [Hotkey/AltTriggerKeys]
 # 0=Shift_L
