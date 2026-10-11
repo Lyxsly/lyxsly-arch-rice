@@ -1,6 +1,10 @@
 [Hotkey]
 # Enumerate when holding modifier of Toggle key
 # EnumerateWithTriggerKeys=True
+# Activate Input Method
+ActivateKeys=
+# Deactivate Input Method
+DeactivateKeys=
 # Consume redundant Activate/Deactivate key
 # ConsumeRedundantActivateKeys=False
 # Enumerate Input Method Forward
@@ -15,12 +19,7 @@
 [Hotkey/TriggerKeys]
 0=Zenkaku_Hankaku
 1=Hangul
-
-[Hotkey/ActivateKeys]
-0=Shift+F23
-
-[Hotkey/DeactivateKeys]
-0=F23
+2=F23
 
 # [Hotkey/AltTriggerKeys]
 # 0=Shift_L

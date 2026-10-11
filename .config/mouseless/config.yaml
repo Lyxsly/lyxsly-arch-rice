@@ -1,24 +1,29 @@
-baseMouseSpeed: 750.0
+baseMouseSpeed: 700.0
 baseScrollSpeed: 20.0
+
+mouseAccelerationTime: 250.0
+mouseAccelerationCurve: 2.0
+startMouseSpeed: 0.0
+
+# mouseDecelerationTime: 300.0
+# mouseDecelerationCurve: 3.0
 
 layers:
   - name: initial
     bindings:
-      righttrl: toggle-layer mouse
+      rightctrl: toggle-layer mouse
+      rightshift+rightctrl: layer mouse
 
   - name: mouse
     passThrough: true
     bindings:
-      h: move -1 0
-      j: move 0 1
-      k: move 0 -1
-      l: move 1 0
+      a: move -1 0
+      s: move 0 1
+      w: move 0 -1
+      d: move 1 0
 
-      f: button left
-      s: button right
+      j: button left
+      l: button right
 
-      u: scroll up
-      d: scroll down
-
-      leftshift: speed 4.0
-      leftctrl: speed 0.25
+      e: scroll up
+      f: scroll down

@@ -1,0 +1,21 @@
+diff --git a/virtual/virtual_mouse.go b/virtual/virtual_mouse.go
+--- a/virtual/virtual_mouse.go
++++ b/virtual/virtual_mouse.go
+@@ -281,8 +281,15 @@
+ ) {
+ 	m.velocity.x = moveTowards(m.velocity.x, x, maxMouseSpeed, startMouseSpeed, accelerationCurve, accelerationStep, decelerationCurve, decelerationStep)
+ 	m.velocity.y = moveTowards(m.velocity.y, y, maxMouseSpeed, startMouseSpeed, accelerationCurve, accelerationStep, decelerationCurve, decelerationStep)
+-	m.moveFraction.x += m.velocity.x * speedFactor
+-	m.moveFraction.y += m.velocity.y * speedFactor
++	// Normalize output movement while preserving velocity for acceleration.
++	moveX, moveY := m.velocity.x, m.velocity.y
++	if length := math.Hypot(moveX, moveY); length > 0 {
++		scale := math.Max(math.Abs(moveX), math.Abs(moveY)) / length
++		moveX *= scale
++		moveY *= scale
++	}
++	m.moveFraction.x += moveX * speedFactor
++	m.moveFraction.y += moveY * speedFactor
+ 	// move only the integer part
+ 	var xInt = int32(m.moveFraction.x)
+ 	var yInt = int32(m.moveFraction.y)
