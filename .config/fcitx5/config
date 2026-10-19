@@ -19,7 +19,7 @@ DeactivateKeys=
 [Hotkey/TriggerKeys]
 0=Zenkaku_Hankaku
 1=Hangul
-2=F23
+2=F24
 
 # [Hotkey/AltTriggerKeys]
 # 0=Shift_L

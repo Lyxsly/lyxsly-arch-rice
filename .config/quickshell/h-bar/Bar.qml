@@ -1,9 +1,7 @@
 // Bar.qml
 import QtQuick
 import Quickshell
-import Quickshell.Io
 import Quickshell.Wayland
-import Quickshell.Hyprland
 
 Scope {
     id: bar
@@ -15,18 +13,19 @@ Scope {
             required property var modelData
             screen: modelData
 
-            implicitHeight: 30
-            // exclusiveZone: 20
-            color: "transparent"
-
             anchors {
                 top: true
                 left: true
                 right: true
             }
 
-            WlrLayershell.layer: WlrLayer.Overlay
+            implicitHeight: 30
+            exclusiveZone: 30
+            color: "transparent"
+
+            WlrLayershell.layer: WlrLayer.Top
             WlrLayershell.namespace: "quickshell:bar"
+
             BarContent {
                 id: barContent
                 anchors {
@@ -34,9 +33,6 @@ Scope {
                     left: parent.left
                     right: parent.right
                 }
-            }
-            ClockWidget {
-                anchors.centerIn: parent
             }
         }
     }
