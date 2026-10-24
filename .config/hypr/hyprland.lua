@@ -24,9 +24,9 @@ end
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
 	output = "eDP-1",
-	mode = "1920x1080@60",
+	mode = "preferred",
 	position = "0x0",
-	scale = "1",
+	scale = "1.25",
 })
 
 hl.monitor({
@@ -63,12 +63,13 @@ local clipboard = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
 hl.on("hyprland.start", function()
-	hl.exec_cmd("eww -c $HOME/.config/eww open-many bar notifications")
+	-- hl.exec_cmd("eww -c $HOME/.config/eww open-many bar notifications")
 	hl.exec_cmd("fcitx5-remote -r")
 	hl.exec_cmd("fcitx5 -d --replace")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("waybar")
 	hl.exec_cmd("zsh -c 'sleep 1 && awww img $HOME/pictures/wallpaper/yofukashi_size4.jpg'")
 end)
 

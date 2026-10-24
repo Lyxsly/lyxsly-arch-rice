@@ -1,11 +1,8 @@
 # source	package
 repo	base
 repo	base-devel
-repo	linux
 repo	linux-firmware
 repo	sudo
-repo	grub
-repo	efibootmgr
 repo	zram-generator
 repo	networkmanager
 repo	bluez
