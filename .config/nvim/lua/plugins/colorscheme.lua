@@ -31,7 +31,7 @@ return {
   --   },
   -- },
   {
-    dir = vim.fn.stdpath("data") .. "/local/matugen-wisteria.nvim",
+    dir = vim.fn.stdpath("config") .. "/local/matugen-wisteria.nvim",
     name = "matugen-wisteria",
     lazy = false,
     priority = 1000,
