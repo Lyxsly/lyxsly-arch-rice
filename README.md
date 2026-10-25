@@ -11,6 +11,36 @@ My Arch Linux / Hyprland dotfiles.
 - Yazi
 - Eww
 - scripts
+- Codex（設定・共通指示・ユーザースキル）
+
+## Codexの復元
+
+Codexをインストールした環境で、このリポジトリをcloneしてから実行します。clone先は任意です。
+
+```sh
+cd ~/dotfiles
+bash scripts/setup_codex.sh
+```
+
+`~/.codex/config.toml`、`~/.codex/AGENTS.md`、`~/.codex/skills/`、`~/.agents/skills/` を、リポジトリ内の実体にリンクします。同じリンクがあれば何もしません。既存のファイルやディレクトリがある場合は、隣の `名前.backup.XXXXXX/original` に退避してからリンクします。別の場所にcloneし直した場合も、同じコマンドでリンクを張り直せます。独自の `CODEX_HOME` を使う環境は、このスクリプトの対象外です。
+
+ユーザースキルは実体を保存しています。今後 `~/.codex/skills/` または `~/.agents/skills/` に追加・編集した内容も、リンク経由でこのリポジトリに反映されます。組み込みの `.system/`、Pythonキャッシュ、認証情報、会話履歴はGit管理に含めません。
+
+MCPを追加するときは `~/.codex/config.toml` の設定と、必要な外部コマンドの導入手順を管理します。現時点ではMCPサーバーの登録はありません。トークンやパスワードは設定に直接書かず、環境変数などで渡してください。Codexへのログイン、MCPの認証、スキルが必要とする実行環境・外部依存は移行先で別途用意します。
+
+現在の設定には `/home/lyxsly` 配下のプロジェクト信頼設定を含みます。別のPCでは、必要に応じてそのPCのプロジェクトを信頼してください。
+
+スキルや設定を追加したら、差分を確認して保存します。
+
+```sh
+cd ~/dotfiles
+git status --short
+git diff -- .codex .agents
+git add -- .codex/config.toml .codex/AGENTS.md .codex/skills .agents/skills
+git diff --cached
+git commit -m "Update Codex configuration and skills"
+git push origin main
+```
 
 ## パッケージの移行
 

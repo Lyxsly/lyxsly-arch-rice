@@ -32,3 +32,14 @@ secrets/
 .config/BraveSoftware/
 .config/zen/
 .config/mozilla/
+
+# Codex: only portable configuration and user skills
+/.codex/*
+!/.codex/config.toml
+!/.codex/AGENTS.md
+!/.codex/skills/
+/.codex/skills/.system/
+/.agents/*
+!/.agents/skills/
+**/__pycache__/
+*.py[cod]
