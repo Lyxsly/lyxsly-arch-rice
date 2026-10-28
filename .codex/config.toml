@@ -1,5 +1,5 @@
 model = "gpt-6.1-sol"
-model_reasoning_effort = "low"
+model_reasoning_effort = "medium"
 hide_agent_reasoning = true
 sandbox_mode = "workspace-write"
 
