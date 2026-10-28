@@ -15,7 +15,6 @@ foreign	tio-git
 repo	chafa
 repo	cava
 repo	fastfetch
-repo	imagemagick
 repo	smartmontools
 repo	powertop
 repo	libva-utils

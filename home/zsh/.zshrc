@@ -33,9 +33,9 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 # --- Starshipの起動 ---
 eval "$(starship init zsh)"
 
-eval "$(fnm env --use-on-cd --shell zsh)"
-eval "$(rbenv init - zsh)"
-eval "$(pyenv init - zsh)"
+command -v fnm >/dev/null 2>&1 && eval "$(fnm env --use-on-cd --shell zsh)"
+command -v rbenv >/dev/null 2>&1 && eval "$(rbenv init - zsh)"
+command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init - zsh)"
 
 # コマンドの正誤を色分け (※競合を防ぐため、必ず最後に読み込む)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

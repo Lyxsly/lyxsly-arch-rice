@@ -4,8 +4,6 @@ repo	lazygit
 repo	fnm
 repo	npm
 repo	bun
-repo	uv
-repo	pyenv
 repo	rbenv
 repo	ruby-build
 repo	mise

@@ -43,7 +43,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "kitty -e yazi"
-local menu = "hyprlauncher"
+local menu = "rofi -modi drun,run -show drun"
 local launcher = "rofi -modi drun,run -show drun"
 local windowSwitcher = "rofi -modi window -show window"
 local clipboard = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
