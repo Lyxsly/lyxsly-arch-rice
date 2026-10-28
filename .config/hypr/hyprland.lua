@@ -68,9 +68,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("fcitx5 -d --replace")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
-	hl.exec_cmd("awww-daemon")
-	hl.exec_cmd("waybar")
-	hl.exec_cmd("zsh -c 'sleep 1 && awww img $HOME/pictures/wallpaper/yofukashi_size4.jpg'")
+	-- Previous: hl.exec_cmd("awww-daemon")
+	-- Previous: hl.exec_cmd("waybar")
+	hl.exec_cmd("bash $HOME/dotfiles/scripts/run_ii.sh -d")
+	-- Previous: hl.exec_cmd("zsh -c 'sleep 1 && awww img $HOME/pictures/wallpaper/yofukashi_size4.jpg'")
 end)
 
 -------------------------------
@@ -393,9 +394,12 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 10%+"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 
 --launcher
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(launcher))
-hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd(windowSwitcher))
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(clipboard))
+-- Previous: hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(launcher))
+hl.bind(mainMod .. " + SPACE", hl.dsp.global("quickshell:searchToggle"), { description = "Shell: Search" })
+-- Previous: hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd(windowSwitcher))
+hl.bind(mainMod .. " + TAB", hl.dsp.global("quickshell:overviewWorkspacesToggle"), { description = "Shell: Overview" })
+-- Previous: hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(clipboard))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.global("quickshell:overviewClipboardToggle"), { description = "Shell: Clipboard" })
 
 --IME Reset
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("fcitx5 -r -d"))
@@ -449,3 +453,6 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+-- Illogical Impulse: integration and GUI overrides, after the existing settings.
+require("hyprland.ii")

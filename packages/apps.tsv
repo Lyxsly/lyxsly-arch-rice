@@ -3,7 +3,6 @@ foreign	zen-browser-bin
 repo	obsidian
 repo	discord
 repo	dolphin
-repo	mpv
 repo	yt-dlp
 repo	visidata
 foreign	smoothcsv-bin

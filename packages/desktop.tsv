@@ -1,6 +1,16 @@
 # source	package
 repo	hyprland
 repo	hyprlock
+repo	plasma-systemmonitor
+repo	plasma-integration
+foreign	darkly-bin
+foreign	adw-gtk-theme-git
+foreign	breeze-plus
+repo	hypridle
+repo	ydotool
+repo	gnome-desktop-4
+repo	mpv
+foreign	mpvpaper
 repo	waybar
 repo	swaync
 repo	rofi

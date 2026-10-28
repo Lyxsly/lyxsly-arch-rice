@@ -1,0 +1,59 @@
+[config]
+
+# =============================================================================
+# 2. System Components (Wayland, Bars, Notifications)
+# =============================================================================
+
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/kitty-colors.conf'
+post_hook = '''
+  pkill -SIGUSR1 -x kitty || :
+'''
+
+[templates.yazi]
+input_path  = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship/starship.toml'
+
+#[templates.lush]
+#input_path = '~/.config/matugen/templates/lush-colors.json'
+#output_path = '~/.config/nvim/colors/lush-colors.json'
+
+[templates.neovim]
+input_path  = '~/.config/matugen/templates/matugen-wisteria.lua'
+output_path = '~/.config/nvim/local/matugen-wisteria.nvim/lua/matugen_wisteria/lib/palette.lua'
+post_hook   = '''
+  pkill -SIGUSR1 -x nvim || :
+'''
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/matugen-colors.lua'
+post_hook = 'hyprctl reload config-only || :'
+
+# Illogical Impulse: keep existing application templates above.
+
+[templates.ii_m3colors]
+input_path = '~/.config/matugen/templates/ii/colors.json'
+output_path = '~/.local/state/quickshell/user/generated/colors.json'
+
+[templates.ii_kde_colors]
+input_path = '~/.config/matugen/templates/ii/kde/color.txt'
+output_path = '~/.local/state/quickshell/user/generated/color.txt'
+
+[templates.ii_wallpaper]
+input_path = '~/.config/matugen/templates/ii/wallpaper.txt'
+output_path = '~/.local/state/quickshell/user/generated/wallpaper/path.txt'
+
+[templates.ii_gtk3]
+input_path = '~/.config/matugen/templates/ii/gtk-3.0/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.ii_gtk4]
+input_path = '~/.config/matugen/templates/ii/gtk-4.0/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
